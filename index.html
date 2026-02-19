@@ -289,10 +289,41 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            /* Mobile Logo Adjustments */
+            .logo-container {
+                gap: 8px;            }
+            
+            .logo-img {
+                height: 32px;
+            }
+            
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            nav {
+                justify-content: space-between;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-container {
+                gap: 6px;
+            }
+            
+            .logo-img {
+                height: 28px;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
-<body>    <!-- Math Background -->
+<body>
+    <!-- Math Background -->
     <div class="math-bg">
         <span>∑</span><span>π</span><span>√</span><span>∫</span><span>∆</span><span>∞</span><span>θ</span><span>φ</span>
         <span>x²</span><span>y²</span><span>z²</span><span>α</span><span>β</span><span>γ</span><span>λ</span><span>μ</span>
@@ -310,8 +341,7 @@
                     <a href="#tutors">Tutors</a>
                     <a href="#testimonials">Reviews</a>
                     <a href="#contact">Contact</a>
-                </div>
-            </nav>
+                </div>            </nav>
         </div>
     </header>
 
@@ -341,7 +371,8 @@
                 
                 <div class="course-card">
                     <h3>Calculus Excellence</h3>
-                    <p>Advanced calculus including derivatives, integrals, and applications.</p>                    <div class="course-price" id="price-calculus">₦55,000 / $120</div>
+                    <p>Advanced calculus including derivatives, integrals, and applications.</p>
+                    <div class="course-price" id="price-calculus">₦55,000 / $120</div>
                     <button class="btn" onclick="selectCourse('Calculus Excellence')">Enroll Now</button>
                 </div>
                 
@@ -360,7 +391,6 @@
             </div>
         </div>
     </section>
-
     <section id="tutors" class="section">
         <div class="container">
             <h2 class="section-title">Meet Our Expert Tutors</h2>
@@ -391,6 +421,7 @@
             </div>
         </div>
     </section>
+
     <section id="testimonials" class="testimonials">
         <div class="container">
             <h2 class="section-title">Student Success Stories</h2>
@@ -408,8 +439,7 @@
                     <p>"Professional and effective tutoring. Highly recommend for serious mathematics students."</p>
                     <strong>- James Thompson, International Student</strong>
                 </div>
-            </div>
-        </div>
+            </div>        </div>
     </section>
 
     <section id="enrollment" class="section">
@@ -439,7 +469,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="tutor">Preferred Tutor</label>                        <select id="tutor" required>
+                        <label for="tutor">Preferred Tutor</label>
+                        <select id="tutor" required>
                             <option value="">Choose a tutor...</option>
                             <option value="Dr. Sarah Johnson">Dr. Sarah Johnson - Algebra & Calculus</option>
                             <option value="Prof. Michael Chen">Prof. Michael Chen - Advanced Calculus</option>
@@ -457,8 +488,7 @@
                     
                     <button type="submit" class="btn">Complete Enrollment</button>
                 </form>
-            </div>
-        </div>
+            </div>        </div>
     </section>
 
     <footer id="contact">
@@ -488,7 +518,8 @@
             
             Object.keys(prices).forEach(key => {
                 const priceElement = document.getElementById(`price-${key}`);
-                if (priceElement) {                    priceElement.textContent = `${prices[key][selectedCurrency]} ${selectedCurrency === 'naira' ? '/ $' : '/ ₦'}${selectedCurrency === 'naira' ? prices[key].dollar.slice(1) : prices[key].naira.slice(1)}`;
+                if (priceElement) {
+                    priceElement.textContent = `${prices[key][selectedCurrency]} ${selectedCurrency === 'naira' ? '/ $' : '/ ₦'}${selectedCurrency === 'naira' ? prices[key].dollar.slice(1) : prices[key].naira.slice(1)}`;
                 }
             });
         }
@@ -506,5 +537,4 @@
         // Initialize prices
         updatePrices();
     </script>
-</body>
-</html>
+</body></html>
